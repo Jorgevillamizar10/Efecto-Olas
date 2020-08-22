@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olas</title>
+    <style>
+        .body{
+            margin: 0;
+        }
+        .waves{
+            position: absolute;
+            /* para que tomen todo el ancho */
+            /* left: 0;
+            right: 0; */
+            /* alto */
+            /* height: 200px; */
+            /* para que se ubiquen en la parte inferior */
+            bottom: -135px;
+            height: 527px;
+            width: 100%;
+            /* para que los elementos que se salgan del contenedor se oculten */
+            overflow: hidden;
+        }
+        .wave{
+            /* width: 200px; */
+            height: 427px;
+            width: 2402px;
+            /* border-radius: 50%; */
+            background: url(waves.png) center bottom no-repeat;
+            position: absolute;
+            left: -180px;
+            bottom: 0;
+            /* tiempo nombre repeticion alternate->para que vayan y vengan */
+            /* ease-in-out para que el tiempo de la animacion tanto en el inicio como en el final bajen */
+            animation: 5s wave ease-in-out infinite alternate;
+        }
+        .wave.a{
+            background-position: 0 -854px;
+        }
+        .wave.b{
+            background-position: 0 -427px;
+            animation-delay: .6s;
+        }
+        .wave.c{
+            background-position: 0 0;
+            animation-delay: 1.2s;
+        }
+        .container{
+            /* para que los circulos se pongan en el mismo lugar */
+            /* position: absolute; */
+            height: 500px;
+            background: #0f9bf6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* para que los elementos que se salgan del contenedor se oculten */
+            /* overflow: hidden; */
+            position: relative;
+        }
+        .content{
+            font-family: arial;
+            text-align: center;
+            font-size: 2em;
+            color: rgba(255,255,255,.8);
+        }
+        @keyframes wave{
+            0%{
+                transform: translateX(0) translateY(0);
+            }
+            50%{
+                transform: translateX(-80px) translateY(30px);
+            }
+            100%{
+                transform: translateX(160px) translateY(-60px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Hola mundo!</h1>
+            <p>Estoy en el Curso de Animaciones para la web!</p>
+        </div>
+        <div class="waves">
+            <div class="wave circulo a"></div>
+            <div class="wave circulo b"></div>
+            <div class="wave circulo c"></div>
+        </div>
+    </div>
+</body>
+</html>
